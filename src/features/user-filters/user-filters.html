@@ -1,0 +1,14 @@
+<div class="user-filters">
+  <tui-textfield tuiChevron>
+    <input tuiSelect [(ngModel)]="selectFilter" (ngModelChange)="onFilterChange($event)" />
+
+    <tui-data-list-wrapper *tuiTextfieldDropdown new [items]="users" />
+  </tui-textfield>
+
+  @if(selectFilter){
+  <tui-textfield iconStart="@tui.search">
+    <label tuiLabel>Поиск</label>
+    <input placeholder="Найти пользователя" tuiTextfield [(ngModel)]="valueInput" (ngModelChange)="onInputChange($event)" />
+  </tui-textfield>
+  }
+</div>

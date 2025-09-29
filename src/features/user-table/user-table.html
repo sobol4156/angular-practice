@@ -1,0 +1,7 @@
+<div class="user-table">
+  @for ( user of users; track user.id){
+  <app-user-component [user]="user"/>
+  }@empty {
+  <span>Ничего не найдено</span>
+  }
+</div>

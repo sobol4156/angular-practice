@@ -1,0 +1,31 @@
+<div class="form-task">
+  <tui-textfield [style.margin-block-end.rem]="1">
+    <label tuiLabel>Добавить задачу</label>
+    <textarea
+      placeholder="Введите новую задачу..."
+      tuiTextarea
+      [formControl]="control"
+      [limit]="100"
+      [max]="6"
+      [min]="3"
+    ></textarea>
+  </tui-textfield>
+  <button tuiButton type="button" (click)="addTask()">Добавить задачу</button>
+  <button tuiButton type="button" appearance="secondary" style="margin-left: 20px;" (click)="clearTasks()">Очистить всё</button>
+  <div class="form-chips" tuiItemGroup [horizontal]="false">
+    <label
+      *ngFor="let chip of chips; let i = index"
+      tuiChip
+      [appearance]="checked[i] ? 'accent' : 'neutral'"
+    >
+      {{ chip }}
+      <input
+        appearance=""
+        tuiChip
+        type="checkbox"
+        [(ngModel)]="checked[i]"
+        (ngModelChange)="onCheckChange()"
+      />
+    </label>
+  </div>
+</div>
