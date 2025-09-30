@@ -21,7 +21,8 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "less",
-            "outputPath": "dist/",
+            "outputPath": "dist/browser",
+            "baseHref": "/",
             "assets": [
               {
                 "glob": "**/*",
