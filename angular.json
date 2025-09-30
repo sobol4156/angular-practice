@@ -22,7 +22,6 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "less",
             "outputPath": "dist/",
-            "baseHref": "/",
             "assets": [
               {
                 "glob": "**/*",
