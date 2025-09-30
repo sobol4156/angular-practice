@@ -1,12 +1,11 @@
 import { TuiRoot } from "@taiga-ui/core";
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { RouterLink } from '@angular/router';
-import { TuiLink } from '@taiga-ui/core';
+import { Navigation } from "../widgets/navigation/navigation";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TuiRoot, RouterLink, TuiLink],
+  imports: [RouterOutlet, TuiRoot, Navigation],
   templateUrl: './app.html',
   styleUrl: './app.less',
 })

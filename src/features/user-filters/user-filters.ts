@@ -26,6 +26,18 @@ interface Character {
 export class UserFilters {
   private debouncedEmit: () => void;
 
+  protected readonly filters: Character[] = [
+    { id: 1, name: 'Имя', filter: 'name' },
+    { id: 2, name: 'Емайл', filter: 'email' },
+    { id: 3, name: 'Юзернейм', filter: 'username' },
+    { id: 4, name: 'Название компании', filter: 'company.name' },
+    { id: 5, name: 'Телефон', filter: 'phone' },
+    { id: 6, name: 'Вебсайт', filter: 'website' },
+  ];
+
+  protected valueInput = '';
+  protected selectFilter: Character | null = null;
+
   constructor(private useDebounce: Debounce) {
     this.debouncedEmit = this.useDebounce.debounce(() => this.emitChange(), 1000);
   }
@@ -40,8 +52,8 @@ export class UserFilters {
     this.debouncedEmit()
   }
 
-  onFilterChange(filter: Character) {
-    this.selectFilter = filter
+  onFilterChange(character: Character) {
+    this.selectFilter = character
     this.valueInput = ''
     this.emitChange()
   }
@@ -54,15 +66,4 @@ export class UserFilters {
       value: this.valueInput
     })
   }
-
-  protected readonly users: Character[] = [
-    { id: 1, name: 'Имя', filter: 'name' },
-    { id: 2, name: 'Емайл', filter: 'email' },
-    { id: 3, name: 'Юзернейм', filter: 'username' },
-    { id: 4, name: 'Название компании', filter: 'company.name' },
-    { id: 5, name: 'Телефон', filter: 'phone' },
-    { id: 6, name: 'Вебсайт', filter: 'website' },
-  ];
-  protected valueInput = '';
-  protected selectFilter!: Character | null;
 }
