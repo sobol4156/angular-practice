@@ -1,3 +1,7 @@
+## Страничка с фильтром людей и тудушка
+
+<img width="1291" height="903" alt="image" src="https://github.com/user-attachments/assets/0a8a9a3e-cc98-4082-a0f2-2e13eb250513" />
+
 # Practice
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
